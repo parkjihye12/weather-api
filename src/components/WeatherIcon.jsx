@@ -9,7 +9,9 @@ const WeatherIcon = () => {
   const getWeather = async () => {
     try {
       const response = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=8014ca43663f34c6e3a9bb8a0d41082c&units=metric`
+        `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${
+          import.meta.env.VITE_API_KEY
+        }&units=metric`
       );
 
       console.log(response);
